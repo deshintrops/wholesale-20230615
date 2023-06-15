@@ -8,6 +8,8 @@ import HomeScreen from './screens/HomeScreen';
 import WelcomeScreen from './screens/WelcomeScreen'; 
 import SplashScreen from './screens/SplashScreen';
 import RegistrationScreen from './screens/RegistrationScreen';
+import AddProductScreen from './screens/AddProductScreen';
+import ProductListScreen from './screens/ProductListScreen';
 
 // Create a stack navigator
 const Stack = createStackNavigator();
@@ -50,11 +52,21 @@ function App() {
           component={WelcomeScreen}
           options={{ headerShown: false }}
         />*/}
-        <Stack.Screen
+        {/*<Stack.Screen
           name="Registration"
           component={RegistrationScreen}
           options={{ headerShown: false }}
-        />
+      />*/}
+      {/*<Stack.Screen
+          name="Add Product"
+          component={AddProductScreen}
+          options={{ headerShown: false }}
+      />*/}
+      <Stack.Screen
+          name="Product List"
+          component={ProductListScreen}
+          options={{ headerShown: false }}
+      />
       </Stack.Navigator>
     </NavigationContainer>
   );
