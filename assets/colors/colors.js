@@ -10,6 +10,9 @@ const colors = {
   gray : '#BABABA',
   error: '#fc2803', 
   disabled: '#d4d6d5',
+  border : '#242424',
+  green: 'green',
+  red : 'red',
 }
 
 export default colors;

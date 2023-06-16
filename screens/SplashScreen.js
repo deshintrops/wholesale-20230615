@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 import colors from '../assets/colors/colors';
+import { log_data } from '../assets/data/system';
 
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
@@ -17,7 +18,7 @@ const SplashScreen = ({ navigation }) => {
           source={require('../assets/images/app/logo.png')}
           style={styles.logo}
         />
-        <Text style={styles.logoText}>WHOLESALE</Text>
+        <Text style={styles.logoText}>{log_data.sys_name}</Text>
       </View>
       <View style={styles.circleTopRight} />
       <View style={styles.circleBottomLeft} /> 

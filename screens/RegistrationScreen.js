@@ -553,7 +553,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: colors.textDark,
+    borderColor: colors.border,
     color: colors.textDark,
     borderWidth: 1,
     paddingHorizontal: 10,

@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     color: colors.textLight,
   },
   textPrimary: {
-    color : colors.primary,
+    color : colors.secondary,
   },
 });
 

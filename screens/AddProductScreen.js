@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
       },
       input: {
         height: 40,
-        borderColor: colors.textDark,
+        borderColor: colors.border,
         color: colors.textDark,
         borderWidth: 1,
         paddingHorizontal: 10,
@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
         height: 90,
         alignItems: 'center',
         justifyContent: 'center',
-        borderColor: colors.textDark,
+        borderColor: colors.border,
         borderWidth: 1,
         borderRadius: 10,
         resizeMode: 'contain',
@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
       textarea : {
         width: '100%',
         height: 100,
-        borderColor: colors.textDark,
+        borderColor: colors.border,
         color: colors.textDark,
         borderWidth: 1,
         paddingHorizontal: 10,

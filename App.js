@@ -62,10 +62,17 @@ function App() {
           component={AddProductScreen}
           options={{ headerShown: false }}
       />*/}
-      <Stack.Screen
+      {/*<Stack.Screen
           name="Product List"
           component={ProductListScreen}
           options={{ headerShown: false }}
+          initialParams={{ data: { type : 'productList'} }}
+      />*/}
+      <Stack.Screen
+          name="My Products"
+          component={ProductListScreen}
+          options={{ headerShown: false }}
+          initialParams={{ propData: { type : 'myProducts'} }}
       />
       </Stack.Navigator>
     </NavigationContainer>
