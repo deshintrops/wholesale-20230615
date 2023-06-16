@@ -16,20 +16,32 @@ import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import ProductItem from '../components/products/ProductItem';
 import { getProducts } from '../assets/data/product';
-import { log_data } from '../assets/data/system';
+import { log_data } from '../assets/data/system'; 
 
 const ProductListScreen = ({ route }) => {
-  const { propData } = route.params;
-  const [propsForItems, setPropsForItems] = useState({
-    shareBtnClicked: false,
-    invoiceBtnClicked: false,
-    stockBtnClicked: false,
-  });
+  const { propsData } = route.params;
+  
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [proListTitle, setProListTitle] = useState('Product List');
-  const [selectedCount, setSelectedCount] = useState(8);
+  const [selectedCount, setSelectedCount] = useState(0);
+
+  const checkCountFunc = (n) => {
+    console.log(n)
+    if(n == 0){
+      setSelectedCount(0)
+    }else{
+      setSelectedCount(selectedCount + parseInt(n))
+    }
+  }
+
+  const [propsForItems, setPropsForItems] = useState({
+    shareBtnClicked: false,
+    invoiceBtnClicked: false,
+    stockBtnClicked: false,
+    checkCountFunc : checkCountFunc,
+  });
 
   useEffect(() => {
     fetchProducts();
@@ -78,6 +90,7 @@ const ProductListScreen = ({ route }) => {
       invoiceBtnClicked: false,
       stockBtnClicked: false,
     });
+    setSelectedCount(0);
     setProListTitle('Product List');
   };
 
@@ -111,7 +124,7 @@ const ProductListScreen = ({ route }) => {
       <View style={styles.proListWrapper}>
         <View style={styles.proListTitleWrapper}>
           <Text style={styles.proListTitle}>{proListTitle}</Text>
-          {selectedCount > 0 ? (<Text>8 Selected</Text>):''}
+          {selectedCount > 0 ? (<Text>{selectedCount} Selected</Text>):''}
         </View>
 
         <FlatList
@@ -124,7 +137,7 @@ const ProductListScreen = ({ route }) => {
         />
       </View>
 
-      {propData.type === 'myProducts' ? (
+      {propsData.type === 'myProducts' ? (
         (propsForItems.shareBtnClicked ||
           propsForItems.invoiceBtnClicked ||
           propsForItems.stockBtnClicked) ? (

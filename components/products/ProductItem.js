@@ -11,6 +11,8 @@ const ProductItem = ({ product, props }) => {
 
   const handleCheckBoxToggle = () => {
     setIsChecked(!isChecked);
+
+    props.checkCountFunc(isChecked ? -1 : 1); // Increment count if checkbox is checked, decrement if unchecked
   };
 
   return (

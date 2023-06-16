@@ -66,13 +66,13 @@ function App() {
           name="Product List"
           component={ProductListScreen}
           options={{ headerShown: false }}
-          initialParams={{ data: { type : 'productList'} }}
+          initialParams={{ propsData: { type : 'productList'} }} 
       />*/}
       <Stack.Screen
           name="My Products"
           component={ProductListScreen}
           options={{ headerShown: false }}
-          initialParams={{ propData: { type : 'myProducts'} }}
+          initialParams={{ propsData: { type : 'myProducts'} }}
       />
       </Stack.Navigator>
     </NavigationContainer>
